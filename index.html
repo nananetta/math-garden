@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Garden</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="top-bar" aria-label="Quiz header">
+        <div>
+          <p class="eyebrow">Math Garden</p>
+          <h1>Pick a level and play</h1>
+        </div>
+        <div class="score-pill" id="scorePill">0 / 0</div>
+      </section>
+
+      <section class="grade-panel" id="gradePanel" aria-label="Choose a grade">
+        <button class="grade-card" type="button" data-grade="pre-k">
+          <span class="grade-icon">🧸</span>
+          <span class="grade-title">Pre-K</span>
+          <span class="grade-subtitle">Counting, matching, patterns</span>
+        </button>
+        <button class="grade-card" type="button" data-grade="kg">
+          <span class="grade-icon">🌈</span>
+          <span class="grade-title">KG</span>
+          <span class="grade-subtitle">Numbers to 10, one more</span>
+        </button>
+        <button class="grade-card" type="button" data-grade="g1">
+          <span class="grade-icon">🚀</span>
+          <span class="grade-title">G1</span>
+          <span class="grade-subtitle">Sums, place value, time</span>
+        </button>
+      </section>
+
+      <section class="quiz-panel is-hidden" id="quizPanel" aria-live="polite">
+        <div class="quiz-meta">
+          <button class="small-button" type="button" id="changeGradeButton">Change level</button>
+          <div class="progress-track" aria-label="Quiz progress">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <article class="question-card">
+          <div class="question-count" id="questionCount">Question 1</div>
+          <div class="visual-stage" id="visualStage"></div>
+          <h2 id="questionText"></h2>
+        </article>
+
+        <div class="choices-grid" id="choicesGrid"></div>
+        <div class="feedback is-hidden" id="feedback"></div>
+
+        <button class="next-button is-hidden" type="button" id="nextButton">Next</button>
+      </section>
+
+      <section class="result-panel is-hidden" id="resultPanel" aria-live="polite">
+        <div class="result-visual" id="resultVisual">🌟</div>
+        <h2 id="resultTitle">Great work</h2>
+        <p id="resultText"></p>
+        <div class="result-actions">
+          <button class="next-button" type="button" id="playAgainButton">Play again</button>
+          <button class="small-button" type="button" id="resultChangeGradeButton">Pick another level</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./questions.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
